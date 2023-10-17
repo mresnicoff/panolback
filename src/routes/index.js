@@ -1,0 +1,51 @@
+const { Router } = require("express");
+const postCurso = require("../controllers/postCurso.js");
+const postProfesor = require("../controllers/postProfesor.js");
+const postHerramienta = require("../controllers/postHerramienta.js");
+const postPrestamo = require("../controllers/postPrestamo.js");
+const getHerramienta = require("../controllers/getherramienta.js");
+const getCurso = require("../controllers/getCurso.js");
+const getProfesor = require("../controllers/getProfesor.js");
+const putCurso = require("../controllers/putCurso.js");
+const deleteCurso = require("../controllers/deleteCurso.js");
+const deletePrestamo = require("../controllers/deletePrestamo.js");
+const getPrestamo = require("../controllers/getPrestamo.js");
+const postestados = require("../controllers/postEstado.js");
+const getDatosBaja = require("../controllers/getDatosBaja.js");
+const getDatosRst = require("../controllers/getDatosRst.js");
+const getDatosSap = require("../controllers/getDatosSap.js");
+const handleUsuarios = require("../controllers/handleUsuarios.js");
+const postPermisos = require("../controllers/postPermisos.js");
+const getPermisos = require("../controllers/getPermisos.js");
+const getUsuario = require("../controllers/getUsuario.js");
+const asignarPermisos = require("../controllers/asignarPermisos.js");
+const deleteDatos = require("../controllers/deletetDatos.js");
+// Ejemplo: const authRouter = require('./auth.js');
+
+const router = Router();
+
+router.post("/", postCurso);
+router.get("/getdatosBaja", getDatosBaja);
+router.get("/getdatosRst", getDatosRst);
+router.get("/getdatosSap", getDatosSap);
+router.post("/usuarios", handleUsuarios);
+router.get("/usuarios", handleUsuarios);
+router.post("/curso", postCurso);
+router.get("/curso", getCurso);
+router.get("/profesor", getProfesor);
+router.get("/prestamo", getPrestamo);
+router.post("/prestamo", postPrestamo);
+router.post("/profesor", postProfesor);
+router.post("/herramienta", postHerramienta);
+router.get("/herramienta", getHerramienta);
+router.put("/curso", putCurso);
+router.delete("/curso", deleteCurso);
+router.delete("/prestamo", deletePrestamo);
+router.get("/permisos", getPermisos);
+router.get("/esteusuario", getUsuario);
+router.post("/asignarpermisos", asignarPermisos);
+router.delete("/datos", deleteDatos);
+
+// Ejemplo: router.use('/auth', authRouter);
+
+module.exports = router;
